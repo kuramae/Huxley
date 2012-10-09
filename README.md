@@ -6,5 +6,6 @@ Intermediate goals:
 - (Web) interface to visualise the location
 
 Long term goals:
-- Dcalable database with core personal information (e.g. locations, purchases, applications used...)
+- Scalable database with core personal information (e.g. locations, purchases, applications used...)
 - Generic scalable database for plug-ins (attribute/value)
+- ...
