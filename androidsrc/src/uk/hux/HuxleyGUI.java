@@ -61,7 +61,7 @@ public class HuxleyGUI extends Activity
     layout.addView(buttonRow);
     layout.addView(text);
     
-    setContentView(R.layout.main);
+    setContentView(layout);
     
     LocationManager locMan = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     if (locMan.isProviderEnabled(locMan.GPS_PROVIDER))
