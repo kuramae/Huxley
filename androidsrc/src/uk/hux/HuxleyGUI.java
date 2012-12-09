@@ -2,6 +2,13 @@ package uk.hux;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.location.*;
+import android.app.*;
+import android.widget.*;
+import android.content.*;
+import android.content.res.Resources;
+import android.view.*;
+import java.net.*;
 
 public class HuxleyGUI extends Activity
 {
