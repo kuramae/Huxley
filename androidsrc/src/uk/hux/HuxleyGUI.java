@@ -22,7 +22,7 @@ public class HuxleyGUI extends Activity
         public void onClick(View v)
         {
           text.append("Trying to start service\n");
-          startService(new Intent(HuxleyGUI.this, HuxleyService.class)));
+          startService(new Intent(HuxleyGUI.this, HuxleyService.class));
           text.append("Started\n");
         }
       });
