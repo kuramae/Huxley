@@ -39,13 +39,13 @@ public class HuxleyService extends Service implements LocationListener
     int networkTime = 180000;
     if (locMan.isProviderEnabled(locMan.GPS_PROVIDER))
     {
-      Toast.makeText(TrackingService.this, "GPS enabled", Toast.LENGTH_SHORT).show();
+      Toast.makeText(HuxleyService.this, "GPS enabled", Toast.LENGTH_SHORT).show();
       locMan.requestLocationUpdates(locMan.GPS_PROVIDER, 60000, 50.0f, this);
     }
     else
     {
-      Toast.makeText(TrackingService.this, "GPS disabled", Toast.LENGTH_LONG).show();
-      Toast.makeText(TrackingService.this, "Using network localisation", Toast.LENGTH_SHORT).show();
+      Toast.makeText(HuxleyService.this, "GPS disabled", Toast.LENGTH_LONG).show();
+      Toast.makeText(HuxleyService.this, "Using network localisation", Toast.LENGTH_SHORT).show();
       networkTime = 30000;
     }
     final Handler handler = new Handler();
@@ -54,7 +54,7 @@ public class HuxleyService extends Service implements LocationListener
       {
         public void run()
         {
-          if (TrackingService.running)
+          if (HuxleyService.running)
           {
             if (System.currentTimeMillis() - lastGPSLock > finalNetworkTime) //only if a long gap in GPS
               processLocation(locMan.getLastKnownLocation(locMan.NETWORK_PROVIDER), false);
@@ -81,13 +81,13 @@ public class HuxleyService extends Service implements LocationListener
     return null;
   }
   
-  public void onLocationChanged(Location location)
+  public void onLocationChanged(android.location.Location location)
   {
     lastGPSLock = System.currentTimeMillis();
     processLocation(location, true);
   }
   
-  private void processLocation(Location location, boolean fromGPS)
+  private void processLocation(android.location.Location location, boolean fromGPS)
   {
     try
     {
@@ -119,7 +119,7 @@ public class HuxleyService extends Service implements LocationListener
       String line = " ";
       if (e.getStackTrace() != null)
         line += "(line "+e.getStackTrace()[0].getLineNumber()+")";
-      Toast.makeText(TrackingService.this, e.getClass().getName()+": "+e.getMessage()+line, Toast.LENGTH_SHORT).show();
+      Toast.makeText(HuxleyService.this, e.getClass().getName()+": "+e.getMessage()+line, Toast.LENGTH_SHORT).show();
     }
   }
   
@@ -130,13 +130,13 @@ public class HuxleyService extends Service implements LocationListener
       NotificationManager notifier = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
       notifier.cancel(type);
       Notification msg = new Notification(R.drawable.notify, "Huxley", System.currentTimeMillis());
-      PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, Tracking.class), 0);
+      PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, HuxleyGUI.class), 0);
       msg.setLatestEventInfo(this, "Huxley", message, contentIntent);
       notifier.notify(type, msg);
     }
     catch (Exception e)
     {
-      Toast.makeText(TrackingService.this, "Huxley exception: "+e.getMessage(), Toast.LENGTH_LONG).show();
+      Toast.makeText(HuxleyService.this, "Huxley exception: "+e.getMessage(), Toast.LENGTH_LONG).show();
     }
   }
   
