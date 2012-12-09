@@ -7,7 +7,7 @@ public abstract class UserStatus
   
   protected UserStatus(long uid, long time)
   {
-    this.userId = uid;
+    this.userID = uid;
     this.timestamp = time;
   }
 }

@@ -99,7 +99,7 @@ public class HuxleyService extends Service implements LocationListener
       
       if (fromGPS)
       {
-        Location networkLocation = locMan.getLastKnownLocation(locMan.NETWORK_PROVIDER); //try the network also
+        android.location.Location networkLocation = locMan.getLastKnownLocation(locMan.NETWORK_PROVIDER); //try the network also
         if (networkLocation != null && networkLocation.hasAccuracy() && location.getAccuracy() > networkLocation.getAccuracy())
         {
           showMessage("Using network location ("+networkLocation.getAccuracy()+"m versus "+location.getAccuracy()+"m)", ERROR_MSG);
@@ -110,7 +110,7 @@ public class HuxleyService extends Service implements LocationListener
       if (location.getAccuracy() <= accuracyThreshold || !fromGPS)
       {
         String locDescription = "";
-        showMessage("GPS: "+threeDP(location.getLatitude())+", "+threeDP(location.getLongitude())+(locDescription.equals("") ? "" : " ("+locDescription+")"), GPS_MSG);
+        showMessage("GPS: "+location.getLatitude()+", "+location.getLongitude()+(locDescription.equals("") ? "" : " ("+locDescription+")"), GPS_MSG);
         //log it
       }
     }
@@ -129,7 +129,7 @@ public class HuxleyService extends Service implements LocationListener
     {
       NotificationManager notifier = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
       notifier.cancel(type);
-      Notification msg = new Notification(R.drawable.notify, "Huxley", System.currentTimeMillis());
+      Notification msg = new Notification(R.drawable-mdpi.hux, "Huxley", System.currentTimeMillis());
       PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, HuxleyGUI.class), 0);
       msg.setLatestEventInfo(this, "Huxley", message, contentIntent);
       notifier.notify(type, msg);
