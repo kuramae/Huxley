@@ -129,7 +129,7 @@ public class HuxleyService extends Service implements LocationListener
     {
       NotificationManager notifier = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
       notifier.cancel(type);
-      Notification msg = new Notification(R.drawable-mdpi.hux, "Huxley", System.currentTimeMillis());
+      Notification msg = new Notification(R.drawable.hux, "Huxley", System.currentTimeMillis());
       PendingIntent contentIntent = PendingIntent.getActivity(this, 0, new Intent(this, HuxleyGUI.class), 0);
       msg.setLatestEventInfo(this, "Huxley", message, contentIntent);
       notifier.notify(type, msg);
