@@ -1,14 +1,12 @@
-package uk.hux;
+package uk.hux.gui;
 
+import uk.hux.service.HuxleyService;
 import android.app.Activity;
 import android.os.Bundle;
 import android.location.*;
-import android.app.*;
 import android.widget.*;
 import android.content.*;
-import android.content.res.Resources;
 import android.view.*;
-import java.net.*;
 
 public class HuxleyGUI extends Activity
 {
@@ -21,6 +19,7 @@ public class HuxleyGUI extends Activity
   {
     super.onCreate(savedInstanceState);
     
+    // Setting up screen
     text = new TextView(this);
     startButton = new Button(this);
     startButton.setText("Start Huxley service");
@@ -63,6 +62,8 @@ public class HuxleyGUI extends Activity
     
     setContentView(layout);
     
+    // Checking if GPS and/or network localisations are enabled and display them
+    // This is run on startup
     LocationManager locMan = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     if (locMan.isProviderEnabled(locMan.GPS_PROVIDER))
       text.setText("GPS enabled\n");

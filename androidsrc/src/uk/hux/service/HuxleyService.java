@@ -1,15 +1,14 @@
-package uk.hux;
+package uk.hux.service;
 
+import uk.hux.R;
+import uk.hux.gui.HuxleyGUI;
 import android.app.*;
 import android.content.*;
 import android.os.*;
 import android.net.*;
 import android.widget.Toast;
 import android.location.*;
-import java.net.*;
-import java.util.List;
-import java.util.Vector;
-import java.io.*;
+import android.util.Log;
 
 /*
 Logs location data
@@ -34,8 +33,10 @@ public class HuxleyService extends Service implements LocationListener
   @Override
   public void onStart(Intent intent, int startId)
   {
+	Log.v(USER_SERVICE, "Starting HuxleyService");
     locMan = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     connMan = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+    
     int networkTime = 180000;
     if (locMan.isProviderEnabled(locMan.GPS_PROVIDER))
     {
@@ -48,6 +49,7 @@ public class HuxleyService extends Service implements LocationListener
       Toast.makeText(HuxleyService.this, "Using network localisation", Toast.LENGTH_SHORT).show();
       networkTime = 30000;
     }
+    
     final Handler handler = new Handler();
     final int finalNetworkTime = networkTime; //finalise the value; over-strict java type system
     handler.postDelayed(new Runnable()
@@ -56,6 +58,10 @@ public class HuxleyService extends Service implements LocationListener
         {
           if (HuxleyService.running)
           {
+        	Log.v(USER_SERVICE, "Higher than: " + 
+        			finalNetworkTime + " < " + 
+        			System.currentTimeMillis() + " - " + 
+        			lastGPSLock);
             if (System.currentTimeMillis() - lastGPSLock > finalNetworkTime) //only if a long gap in GPS
               processLocation(locMan.getLastKnownLocation(locMan.NETWORK_PROVIDER), false);
             handler.postDelayed(this, finalNetworkTime);

@@ -5,10 +5,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.util.Log;
-import java.io.IOException;
 import uk.hux.*;
 import java.util.*;
-import java.net.*;
 
 public class GooglePlacesAPI {
 	private String base_url;
@@ -24,9 +22,7 @@ public class GooglePlacesAPI {
 	{
 		return key;
 	}
-	
-	
-	
+		
 	public GooglePlacesAPI(
 		String base_url,
 		String key)
@@ -45,18 +41,19 @@ public class GooglePlacesAPI {
 		Location loc,
 		String keyword) 
 	{
-		ArrayList<Place> resultList = null;
+		ArrayList<Place> resultList = new ArrayList<Place>();
 		Map<String,String> arguments = new HashMap<String, String>();
 		arguments.put("sensor", "false");
 		arguments.put("key", getKey());
 		if (keyword != null)
 			arguments.put("keyword", keyword);
 		arguments.put("location", (loc.latitude) + "," + (loc.longitude));
-		arguments.put("radius", Double.toString(loc.accuracy));
+		arguments.put("radius", Double.toString(loc.accuracy.getMetres()));
 		
 		try {
-			JSONArray json_res = 
-			HTTPQuery.queryJSON(getBaseUrl(), arguments).getJSONArray("results");
+			
+			JSONObject json_obj = HTTPQuery.queryJSON(getBaseUrl(), arguments);
+			JSONArray json_res = json_obj.getJSONArray("results");
 			
 			for (int i = 0; i < json_res.length(); i++) {
 				Place place = new Place(json_res.getJSONObject(i).getString("name"),
@@ -65,6 +62,10 @@ public class GooglePlacesAPI {
 			}
 			
 		}
+		catch (JSONException e) {
+            Log.e("Huxley", "JSON Exception. Error connecting to Places API.", e);
+            return resultList;
+        }
 		catch (Exception e) {
             Log.e("Huxley", "Error connecting to Places API", e);
             return resultList;
