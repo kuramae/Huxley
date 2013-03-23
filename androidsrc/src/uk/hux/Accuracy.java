@@ -12,4 +12,9 @@ public class Accuracy {
 	{
 		return metres;
 	}
+  
+  public String toString()
+  {
+    return metres+"m";
+  }
 }

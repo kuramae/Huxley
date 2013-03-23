@@ -5,7 +5,7 @@ import java.io.*;
 
 public class LocationLog implements Iterable<Location>
 {
-  private Vector<Location> log;
+  private Vector<Location> log = new Vector<Location>();
   
   public LocationLog()
   {
@@ -29,7 +29,7 @@ public class LocationLog implements Iterable<Location>
         tokeniser.nextToken(); //speed
         tokeniser.nextToken(); //satellites
         String name = (tokeniser.hasMoreTokens() ? tokeniser.nextToken() : "");
-        addLocation(new Location(0, time, lat, lon, accuracy));
+        addLocation(new Location(0, time, lat, lon, new Accuracy(accuracy)));
       }
       catch (NumberFormatException e)
       {
@@ -47,5 +47,13 @@ public class LocationLog implements Iterable<Location>
   public Iterator<Location> iterator()
   {
     return log.iterator();
+  }
+  
+  public static void main(String args[]) throws Exception //test
+  {
+    LocationLog log = new LocationLog();
+    log.loadFromFile("f:/domenico/huxley/huxley/tracklog-iceland.txt");
+    for (Location ll : log)
+      System.out.println(ll);
   }
 }

@@ -16,6 +16,6 @@ public class Location extends UserStatus
 
 	public String toString()
 	{
-		return userID+","+timestamp+","+latitude+","+longitude+","+accuracy+"m";
+		return userID+","+timestamp+","+latitude+","+longitude+","+accuracy;
 	}
 }
