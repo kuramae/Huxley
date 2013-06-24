@@ -1,14 +1,14 @@
 package uk.hux.service;
 
-import uk.hux.R;
-import uk.hux.gui.HuxleyGUI;
+import uk.hux.gui.*;
+import uk.hux.*;
 import android.app.*;
 import android.content.*;
 import android.os.*;
 import android.net.*;
 import android.widget.Toast;
 import android.location.*;
-import android.util.Log;
+import android.util.*;
 
 /*
 Logs location data
@@ -16,12 +16,16 @@ Logs location data
 
 public class HuxleyService extends Service implements LocationListener
 {
-  public static final String HUXSERVICE = "HuxleyService";
+  private static final String HUXSERVICE = "HuxleyService";
+  private static final int ERROR_MSG = 7777;
+  private static final int DANYEY_MSG = 8888;
+  private static final int GPS_MSG = 9999;
+  private static final float accuracyThreshold = 512;
+  
+  public static LocationLog log; //may be a better way to deal with global variables
+  public static int userID = 0;
   public static boolean running = false;
-  private final int ERROR_MSG = 7777;
-  private final int DANYEY_MSG = 8888;
-  private final int GPS_MSG = 9999;
-  private final float accuracyThreshold = 512;
+  
   private LocationManager locMan;
   private ConnectivityManager connMan;
   private long lastGPSLock = 0;
@@ -29,6 +33,8 @@ public class HuxleyService extends Service implements LocationListener
   @Override
   public void onCreate()
   {
+    if (log == null)
+      log = new LocationLog();
   }
   
   @Override
@@ -115,7 +121,7 @@ public class HuxleyService extends Service implements LocationListener
       {
         String locDescription = "";
         showMessage("GPS: "+location.getLatitude()+", "+location.getLongitude()+(locDescription.equals("") ? "" : " ("+locDescription+")"), GPS_MSG);
-        //log it
+        log.addLocation(new uk.hux.Location(userID, System.currentTimeMillis(), location.getLatitude(), location.getLongitude(), new Accuracy(location.getAccuracy())));
       }
     }
     catch (Exception e)

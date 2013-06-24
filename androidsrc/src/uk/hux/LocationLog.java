@@ -29,7 +29,7 @@ public class LocationLog implements Iterable<Location>
         tokeniser.nextToken(); //speed
         tokeniser.nextToken(); //satellites
         String name = (tokeniser.hasMoreTokens() ? tokeniser.nextToken() : "");
-        addLocation(new Location(0, time, lat, lon, new Accuracy(accuracy)));
+        addLocation(new Location(0, time, lat, lon, new Accuracy(accuracy))); //user ID set to 0
       }
       catch (NumberFormatException e)
       {
@@ -47,6 +47,11 @@ public class LocationLog implements Iterable<Location>
   public Iterator<Location> iterator()
   {
     return log.iterator();
+  }
+  
+  public int size()
+  {
+    return log.size();
   }
   
   public static void main(String args[]) throws Exception //test
