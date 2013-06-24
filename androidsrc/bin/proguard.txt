@@ -1,6 +1,0 @@
-# view AndroidManifest.xml #generated:11
--keep class uk.hux.HuxleyGUI { <init>(...); }
-
-# view AndroidManifest.xml #generated:18
--keep class uk.hux.HuxleyService { <init>(...); }
-

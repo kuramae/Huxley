@@ -20,9 +20,12 @@ public class HTTPQuery {
 	public static JSONObject queryJSON(String url, Map<String,String> urlparameters)
 	{
 		String sb = "";
+		boolean first = true;
 		for(String skey : urlparameters.keySet())
 		{
-			sb += "?" + skey + "=" + urlparameters.get(skey);
+			sb += first ? "?" : "&";
+			sb += skey + "=" + urlparameters.get(skey);
+			first = false;
 		}
 		sb = url + sb;		
 		return queryJSON(sb);
@@ -31,6 +34,7 @@ public class HTTPQuery {
 	public static JSONObject queryJSON(String s_url)
 	{
 		String result = "";
+		Log.d("Huxley", "Querying " + s_url);
 		HttpURLConnection conn = null;
 		try{
 			URL url = new URL(s_url);
@@ -46,13 +50,13 @@ public class HTTPQuery {
 			return new JSONObject(result);
 		}
 		catch (MalformedURLException e) {
-            Log.e("Huxley", "Error in url " +  s_url, e);
+            Log.d("Huxley", "Error in url " +  s_url, e);
         } 
         catch (IOException e) {
-            Log.e("Huxley", "Error connecting to " + s_url, e);
+            Log.d("Huxley", "Error connecting to " + s_url, e);
         } 
         catch (JSONException e) {
-            Log.e("Huxley", "Error constructing JSON object", e);
+            Log.d("Huxley", "Error constructing JSON object", e);
         }
         finally {
             if (conn != null) {
