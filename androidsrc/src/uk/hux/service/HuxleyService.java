@@ -16,6 +16,7 @@ Logs location data
 
 public class HuxleyService extends Service implements LocationListener
 {
+  public static final String HUXSERVICE = "HuxleyService";
   public static boolean running = false;
   private final int ERROR_MSG = 7777;
   private final int DANYEY_MSG = 8888;
@@ -33,7 +34,7 @@ public class HuxleyService extends Service implements LocationListener
   @Override
   public void onStart(Intent intent, int startId)
   {
-	Log.v(USER_SERVICE, "Starting HuxleyService");
+    Log.v(HUXSERVICE, "Starting HuxleyService");
     locMan = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
     connMan = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
     
@@ -58,10 +59,7 @@ public class HuxleyService extends Service implements LocationListener
         {
           if (HuxleyService.running)
           {
-        	Log.v(USER_SERVICE, "Higher than: " + 
-        			finalNetworkTime + " < " + 
-        			System.currentTimeMillis() + " - " + 
-        			lastGPSLock);
+            Log.v(HUXSERVICE, "Higher than: " + finalNetworkTime + " < " + System.currentTimeMillis() + " - " + lastGPSLock);
             if (System.currentTimeMillis() - lastGPSLock > finalNetworkTime) //only if a long gap in GPS
               processLocation(locMan.getLastKnownLocation(locMan.NETWORK_PROVIDER), false);
             handler.postDelayed(this, finalNetworkTime);
