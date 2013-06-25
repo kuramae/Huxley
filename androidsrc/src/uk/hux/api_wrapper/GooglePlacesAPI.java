@@ -8,7 +8,10 @@ import android.util.Log;
 import uk.hux.*;
 import java.util.*;
 
-public class GooglePlacesAPI {
+public class GooglePlacesAPI
+{
+  public static final String DEFAULT_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
+  
 	private String base_url;
 	private String key;
 	

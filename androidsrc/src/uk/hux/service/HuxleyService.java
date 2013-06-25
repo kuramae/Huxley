@@ -22,10 +22,6 @@ public class HuxleyService extends Service implements LocationListener
   private static final int GPS_MSG = 9999;
   private static final float accuracyThreshold = 512;
   
-  public static LocationLog log; //may be a better way to deal with global variables
-  public static int userID = 0;
-  public static boolean running = false;
-  
   private LocationManager locMan;
   private ConnectivityManager connMan;
   private long lastGPSLock = 0;
@@ -33,8 +29,6 @@ public class HuxleyService extends Service implements LocationListener
   @Override
   public void onCreate()
   {
-    if (log == null)
-      log = new LocationLog();
   }
   
   @Override
@@ -63,7 +57,7 @@ public class HuxleyService extends Service implements LocationListener
       {
         public void run()
         {
-          if (HuxleyService.running)
+          if (HuxleyCore.core.serviceRunning)
           {
             Log.v(HUXSERVICE, "Higher than: " + finalNetworkTime + " < " + System.currentTimeMillis() + " - " + lastGPSLock);
             if (System.currentTimeMillis() - lastGPSLock > finalNetworkTime) //only if a long gap in GPS
@@ -73,13 +67,13 @@ public class HuxleyService extends Service implements LocationListener
         }
       }, finalNetworkTime);
     showMessage("Huxley service started", GPS_MSG);
-    running = true;
+    HuxleyCore.core.serviceRunning = true;
   }
   
   @Override
   public void onDestroy()
   {
-    running = false;
+    HuxleyCore.core.serviceRunning = false;
     NotificationManager notifier = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
     notifier.cancelAll();
     locMan.removeUpdates(this);
@@ -121,7 +115,7 @@ public class HuxleyService extends Service implements LocationListener
       {
         String locDescription = "";
         showMessage("GPS: "+location.getLatitude()+", "+location.getLongitude()+(locDescription.equals("") ? "" : " ("+locDescription+")"), GPS_MSG);
-        log.addLocation(new uk.hux.Location(userID, System.currentTimeMillis(), location.getLatitude(), location.getLongitude(), new Accuracy(location.getAccuracy())));
+        HuxleyCore.core.log.addLocation(new uk.hux.Location(HuxleyCore.core.userID, System.currentTimeMillis(), location.getLatitude(), location.getLongitude(), new Accuracy(location.getAccuracy())));
       }
     }
     catch (Exception e)

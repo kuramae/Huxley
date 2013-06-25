@@ -1,6 +1,7 @@
 package uk.hux.gui;
 
-import uk.hux.service.HuxleyService;
+import uk.hux.service.*;
+import uk.hux.*;
 import android.app.Activity;
 import android.os.Bundle;
 import android.location.*;
@@ -14,6 +15,7 @@ public class HuxleyGUI extends Activity
   private Button startButton;
   private Button stopButton;
   private Button logButton;
+  private Button whereButton;
   
   @Override
   public void onCreate(Bundle savedInstanceState)
@@ -55,10 +57,20 @@ public class HuxleyGUI extends Activity
       {
         public void onClick(View v)
         {
-          if (HuxleyService.log == null)
+          if (HuxleyCore.core.log == null)
             text.append("Log empty\n");
           else
-            text.append(HuxleyService.log.size()+" log entries\n");
+            text.append(HuxleyCore.core.log.size()+" log entries\n");
+        }
+      });
+    
+    whereButton = new Button(this);
+    whereButton.setText("Where the fuck was I?");
+    whereButton.setOnClickListener(new View.OnClickListener()
+      {
+        public void onClick(View v)
+        {
+          startActivity(new Intent(HuxleyGUI.this, TimeChooserGUI.class));
         }
       });
     
@@ -69,6 +81,7 @@ public class HuxleyGUI extends Activity
     TableLayout layout = new TableLayout(this);
     layout.setColumnStretchable(0, true);
     layout.setColumnStretchable(1, true);
+    layout.setColumnStretchable(2, true);
     TableRow buttonRow = new TableRow(this);
     TableRow nameRow = new TableRow(this);
     nameRow.addView(name);
@@ -77,6 +90,7 @@ public class HuxleyGUI extends Activity
     buttonRow.addView(logButton);
     layout.addView(nameRow);
     layout.addView(buttonRow);
+    layout.addView(whereButton);
     layout.addView(text);
     
     setContentView(layout);
@@ -88,7 +102,7 @@ public class HuxleyGUI extends Activity
   {
     // Checking if GPS and/or network localisations are enabled and display them
     // This is run on startup
-    if (HuxleyService.running)
+    if (HuxleyCore.core.serviceRunning)
     {
       startButton.setEnabled(false);
       stopButton.setEnabled(true);

@@ -7,14 +7,14 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <application android:label="@string/app_name" android:icon="@drawable/huxicon">
-        <activity android:name="uk.hux.gui.HuxleyGUI"
-                  android:label="@string/app_name">
+    <application android:label="@string/app_name" android:icon="@drawable/huxicon" android:name="uk.hux.HuxleyCore">
+        <activity android:name="uk.hux.gui.HuxleyGUI" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="uk.hux.gui.TimeChooserGUI" android:label="Where was I at..."/>
         <service android:name="uk.hux.service.HuxleyService" />
     </application>
     <uses-sdk android:minSdkVersion="3" />
