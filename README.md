@@ -1,43 +1,25 @@
-Build and Run
+Directory structure
 =========
-Android app
+- androidsrc contains old android source code. We will resume the development there and make a lightweight client for android. Most of the code written there should go to the server
+- huxley-server contains the server. It exposes a REST api to the rest of the world and it builds on Jersey
+- ios-client contains the ios client. 
+
+
+Build and Run the server
+=========
+Prerequisites
 -----------
-From the main directory (for the release build use release instead of debug):
+We need Java and Maven in the PATH. Let us also assume we have a working directory:
 ```
-cd androidsrc
-ant debug
+export WORKINGDIR=~/Dev
 ```
-If a virtual device is not running:
+Assuming Java is installed Maven can be obtained by executing:
 ```
-$(ANDROIDSDK)/sdk/tools/android avd
+curl http://mirror.catn.com/pub/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz | tar xvz | mv maven* $WORKINGDIR/maven
+export PATH="$WORKINGDIR/maven:$PATH"
 ```
-In the Virtual Devices view, select an AVD and click Start.
+Now check that 
 ```
-$(ANDROIDSDK)/sdk/platform-tools/adb <path_to_your_bin>.apk
-$(ANDROIDSDK)/sdk/platform-tools/adb install bin/huxley-debug-unaligned.apk
+mvn -v
 ```
-Or if there's more than one emulator running (see http://developer.android.com/tools/building/building-cmdline.html)
-```
-$(ANDROIDSDK)/sdk/platform-tools/adb -s emulator-XYWZ install bin/huxley-debug-unaligned.apk
-```
-
-Android test
-------------
-From the main directory (for the release build use release instead of debug):
-```
-cd androidsrc/tests
-```
-If a virtual device is not running:
-```
-$(ANDROIDSDK)/sdk/tools/android avd
-```
-```
-ant test
-```
-
-
-Huxley
-=========
-
-First proptotype. A use case:
-- Blah
+returns something meaningful and you are ready to go.

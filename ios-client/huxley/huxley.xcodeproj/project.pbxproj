@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF70160A186F43650044C462 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF701609186F43650044C462 /* Foundation.framework */; };
+		EF70160C186F43650044C462 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF70160B186F43650044C462 /* CoreGraphics.framework */; };
+		EF70160E186F43650044C462 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF70160D186F43650044C462 /* UIKit.framework */; };
+		EF701614186F43650044C462 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF701612186F43650044C462 /* InfoPlist.strings */; };
+		EF701616186F43650044C462 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF701615186F43650044C462 /* main.m */; };
+		EF70161A186F43650044C462 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF701619186F43650044C462 /* AppDelegate.m */; };
+		EF70161D186F43650044C462 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF70161B186F43650044C462 /* Main.storyboard */; };
+		EF701620186F43650044C462 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF70161F186F43650044C462 /* FirstViewController.m */; };
+		EF701623186F43650044C462 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF701622186F43650044C462 /* SecondViewController.m */; };
+		EF701625186F43650044C462 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF701624186F43650044C462 /* Images.xcassets */; };
+		EF70162C186F43650044C462 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF70162B186F43650044C462 /* XCTest.framework */; };
+		EF70162D186F43650044C462 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF701609186F43650044C462 /* Foundation.framework */; };
+		EF70162E186F43650044C462 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF70160D186F43650044C462 /* UIKit.framework */; };
+		EF701636186F43650044C462 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF701634186F43650044C462 /* InfoPlist.strings */; };
+		EF701638186F43650044C462 /* huxleyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF701637186F43650044C462 /* huxleyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF70162F186F43650044C462 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF7015FE186F43650044C462 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF701605186F43650044C462;
+			remoteInfo = huxley;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF701606186F43650044C462 /* huxley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = huxley.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF701609186F43650044C462 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EF70160B186F43650044C462 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EF70160D186F43650044C462 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EF701611186F43650044C462 /* huxley-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "huxley-Info.plist"; sourceTree = "<group>"; };
+		EF701613186F43650044C462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EF701615186F43650044C462 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EF701617186F43650044C462 /* huxley-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "huxley-Prefix.pch"; sourceTree = "<group>"; };
+		EF701618186F43650044C462 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EF701619186F43650044C462 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EF70161C186F43650044C462 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF70161E186F43650044C462 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		EF70161F186F43650044C462 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		EF701621186F43650044C462 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		EF701622186F43650044C462 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		EF701624186F43650044C462 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		EF70162A186F43650044C462 /* huxleyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = huxleyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF70162B186F43650044C462 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		EF701633186F43650044C462 /* huxleyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "huxleyTests-Info.plist"; sourceTree = "<group>"; };
+		EF701635186F43650044C462 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EF701637186F43650044C462 /* huxleyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = huxleyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF701603186F43650044C462 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF70160C186F43650044C462 /* CoreGraphics.framework in Frameworks */,
+				EF70160E186F43650044C462 /* UIKit.framework in Frameworks */,
+				EF70160A186F43650044C462 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF701627186F43650044C462 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF70162C186F43650044C462 /* XCTest.framework in Frameworks */,
+				EF70162E186F43650044C462 /* UIKit.framework in Frameworks */,
+				EF70162D186F43650044C462 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF7015FD186F43650044C462 = {
+			isa = PBXGroup;
+			children = (
+				EF70160F186F43650044C462 /* huxley */,
+				EF701631186F43650044C462 /* huxleyTests */,
+				EF701608186F43650044C462 /* Frameworks */,
+				EF701607186F43650044C462 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF701607186F43650044C462 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF701606186F43650044C462 /* huxley.app */,
+				EF70162A186F43650044C462 /* huxleyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF701608186F43650044C462 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF701609186F43650044C462 /* Foundation.framework */,
+				EF70160B186F43650044C462 /* CoreGraphics.framework */,
+				EF70160D186F43650044C462 /* UIKit.framework */,
+				EF70162B186F43650044C462 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF70160F186F43650044C462 /* huxley */ = {
+			isa = PBXGroup;
+			children = (
+				EF701618186F43650044C462 /* AppDelegate.h */,
+				EF701619186F43650044C462 /* AppDelegate.m */,
+				EF70161B186F43650044C462 /* Main.storyboard */,
+				EF70161E186F43650044C462 /* FirstViewController.h */,
+				EF70161F186F43650044C462 /* FirstViewController.m */,
+				EF701621186F43650044C462 /* SecondViewController.h */,
+				EF701622186F43650044C462 /* SecondViewController.m */,
+				EF701624186F43650044C462 /* Images.xcassets */,
+				EF701610186F43650044C462 /* Supporting Files */,
+			);
+			path = huxley;
+			sourceTree = "<group>";
+		};
+		EF701610186F43650044C462 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF701611186F43650044C462 /* huxley-Info.plist */,
+				EF701612186F43650044C462 /* InfoPlist.strings */,
+				EF701615186F43650044C462 /* main.m */,
+				EF701617186F43650044C462 /* huxley-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EF701631186F43650044C462 /* huxleyTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF701637186F43650044C462 /* huxleyTests.m */,
+				EF701632186F43650044C462 /* Supporting Files */,
+			);
+			path = huxleyTests;
+			sourceTree = "<group>";
+		};
+		EF701632186F43650044C462 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF701633186F43650044C462 /* huxleyTests-Info.plist */,
+				EF701634186F43650044C462 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF701605186F43650044C462 /* huxley */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF70163B186F43650044C462 /* Build configuration list for PBXNativeTarget "huxley" */;
+			buildPhases = (
+				EF701602186F43650044C462 /* Sources */,
+				EF701603186F43650044C462 /* Frameworks */,
+				EF701604186F43650044C462 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = huxley;
+			productName = huxley;
+			productReference = EF701606186F43650044C462 /* huxley.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF701629186F43650044C462 /* huxleyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF70163E186F43650044C462 /* Build configuration list for PBXNativeTarget "huxleyTests" */;
+			buildPhases = (
+				EF701626186F43650044C462 /* Sources */,
+				EF701627186F43650044C462 /* Frameworks */,
+				EF701628186F43650044C462 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF701630186F43650044C462 /* PBXTargetDependency */,
+			);
+			name = huxleyTests;
+			productName = huxleyTests;
+			productReference = EF70162A186F43650044C462 /* huxleyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF7015FE186F43650044C462 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Huxley;
+				TargetAttributes = {
+					EF701629186F43650044C462 = {
+						TestTargetID = EF701605186F43650044C462;
+					};
+				};
+			};
+			buildConfigurationList = EF701601186F43650044C462 /* Build configuration list for PBXProject "huxley" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF7015FD186F43650044C462;
+			productRefGroup = EF701607186F43650044C462 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF701605186F43650044C462 /* huxley */,
+				EF701629186F43650044C462 /* huxleyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF701604186F43650044C462 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF701625186F43650044C462 /* Images.xcassets in Resources */,
+				EF701614186F43650044C462 /* InfoPlist.strings in Resources */,
+				EF70161D186F43650044C462 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF701628186F43650044C462 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF701636186F43650044C462 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF701602186F43650044C462 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF701623186F43650044C462 /* SecondViewController.m in Sources */,
+				EF70161A186F43650044C462 /* AppDelegate.m in Sources */,
+				EF701620186F43650044C462 /* FirstViewController.m in Sources */,
+				EF701616186F43650044C462 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF701626186F43650044C462 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF701638186F43650044C462 /* huxleyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF701630186F43650044C462 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF701605186F43650044C462 /* huxley */;
+			targetProxy = EF70162F186F43650044C462 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF701612186F43650044C462 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF701613186F43650044C462 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EF70161B186F43650044C462 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF70161C186F43650044C462 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF701634186F43650044C462 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF701635186F43650044C462 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF701639186F43650044C462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EF70163A186F43650044C462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF70163C186F43650044C462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "huxley/huxley-Prefix.pch";
+				INFOPLIST_FILE = "huxley/huxley-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EF70163D186F43650044C462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "huxley/huxley-Prefix.pch";
+				INFOPLIST_FILE = "huxley/huxley-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		EF70163F186F43650044C462 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/huxley.app/huxley";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "huxley/huxley-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "huxleyTests/huxleyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		EF701640186F43650044C462 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/huxley.app/huxley";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "huxley/huxley-Prefix.pch";
+				INFOPLIST_FILE = "huxleyTests/huxleyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF701601186F43650044C462 /* Build configuration list for PBXProject "huxley" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF701639186F43650044C462 /* Debug */,
+				EF70163A186F43650044C462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF70163B186F43650044C462 /* Build configuration list for PBXNativeTarget "huxley" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF70163C186F43650044C462 /* Debug */,
+				EF70163D186F43650044C462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EF70163E186F43650044C462 /* Build configuration list for PBXNativeTarget "huxleyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF70163F186F43650044C462 /* Debug */,
+				EF701640186F43650044C462 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF7015FE186F43650044C462 /* Project object */;
+}
