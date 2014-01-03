@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "EFCircularSlider.h"
 
 @interface ViewController ()
 
