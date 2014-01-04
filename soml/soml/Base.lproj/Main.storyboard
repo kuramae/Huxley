@@ -178,6 +178,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FsU-Fk-Weo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </mapView>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="linemenu.png" translatesAutoresizingMaskIntoConstraints="NO" id="KDz-jX-2dc" userLabel="linemenu">
                                 <rect key="frame" x="11" y="447" width="298" height="159"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -240,7 +244,7 @@
                     </view>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="511" y="-554"/>
+            <point key="canvasLocation" x="517" y="-554"/>
         </scene>
         <!--Favourite Places-->
         <scene sceneID="WPM-jK-KqG">
@@ -492,10 +496,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Y2q-6G-lcB"/>
+        <segue reference="Hhd-zz-y2w"/>
+        <segue reference="ZZO-Ji-NNr"/>
+        <segue reference="R0t-vk-R8N"/>
+        <segue reference="HrJ-IW-p6C"/>
         <segue reference="GCm-Kj-a6x"/>
-        <segue reference="AsA-2c-QMI"/>
-        <segue reference="gGj-ML-fNo"/>
-        <segue reference="iSI-fk-U21"/>
     </inferredMetricsTieBreakers>
 </document>
