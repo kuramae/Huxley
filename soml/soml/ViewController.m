@@ -19,6 +19,15 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+ 
+
+        CGRect sliderFrame = CGRectMake(110, 150, 100, 100);
+        EFCircularSlider* circularSlider = [[EFCircularSlider alloc] initWithFrame:sliderFrame];
+        [self.view addSubview:circularSlider];
+        // test per vedere se va lo scroll rotondo
+     
+    
 }
 
 - (void)didReceiveMemoryWarning
