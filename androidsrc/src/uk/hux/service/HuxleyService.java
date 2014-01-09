@@ -23,7 +23,6 @@ public class HuxleyService extends Service implements LocationListener
   private static final float accuracyThreshold = 512;
   
   private LocationManager locMan;
-  private ConnectivityManager connMan;
   private long lastGPSLock = 0;
   
   @Override
@@ -36,7 +35,6 @@ public class HuxleyService extends Service implements LocationListener
   {
     Log.v(HUXSERVICE, "Starting HuxleyService");
     locMan = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-    connMan = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
     
     int networkTime = 180000;
     if (locMan.isProviderEnabled(locMan.GPS_PROVIDER))

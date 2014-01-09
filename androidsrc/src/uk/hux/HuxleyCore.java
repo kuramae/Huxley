@@ -36,6 +36,11 @@ public class HuxleyCore extends Application
   {
     //load globals at app startup
     userID = 0;
-    log = new LocationLog();
+    log = new RemoteLocationLog();
+  }
+  
+  public String getUserIDHash()
+  {
+    return ""+userID;
   }
 }
